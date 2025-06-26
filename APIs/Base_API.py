@@ -18,7 +18,7 @@ class BaseAPI:
             logging.warning(f"\n---verify_status_code function is filed. Expected: {expected_status_code} Actual: {actual_status_code} More: {e}")
             return 1
 
-    def health_check(self):
+    def verify_health_check(self):
         url = f"{self.host}{self.health_check_endpoint}"
         response = requests.get(url=url)
         try:
