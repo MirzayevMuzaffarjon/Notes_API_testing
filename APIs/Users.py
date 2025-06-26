@@ -1,7 +1,6 @@
 import logging, requests
 from APIs.Base_API import BaseAPI
-import os
-from dotenv import load_dotenv
+
 
 class UsersAPI(BaseAPI):
 
@@ -10,6 +9,5 @@ class UsersAPI(BaseAPI):
         try:
             response = requests.post(url=url, json=body, headers=headers)
             return response
-
         except Exception as e:
             logging.warning(f"---call_user_register_api was failed!!! Exception: {e}")
