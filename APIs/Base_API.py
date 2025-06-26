@@ -8,6 +8,7 @@ class BaseAPI:
         self.health_check_endpoint = os.getenv("HEALTH_CHECK_ENDPOINT")
         self.user_register_endpoint = os.getenv("USER_REGISTER_ENDPOINT")
         self.user_login_endpoint = os.getenv("USER_LOGIN_ENDPOINT")
+        self.user_delete_endpoint = os.getenv("USER_DELETE_ENDPOINT")
 
     @staticmethod
     def verify_status_code_is(expected_status_code, actual_status_code):
@@ -16,7 +17,7 @@ class BaseAPI:
             return 0
         
         except Exception as e:
-            logging.warning(f"\n---verify_status_code function is filed. Expected: {expected_status_code} Actual: {actual_status_code} More: {e}")
+            logging.warning(f"\n---verify_status_code function is filed. Expected:{expected_status_code} Actual:{actual_status_code} More: {e}")
             return 1
 
     def verify_health_check(self):
