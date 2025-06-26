@@ -7,6 +7,7 @@ class BaseAPI:
         self.host = os.getenv("BASE_API")
         self.health_check_endpoint = os.getenv("HEALTH_CHECK_ENDPOINT")
         self.user_register_endpoint = os.getenv("USER_REGISTER_ENDPOINT")
+        self.user_login_endpoint = os.getenv("USER_LOGIN_ENDPOINT")
 
     @staticmethod
     def verify_status_code_is(expected_status_code, actual_status_code):

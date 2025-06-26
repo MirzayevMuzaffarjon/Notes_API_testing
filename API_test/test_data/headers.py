@@ -1,3 +1,3 @@
-header_for_user_register = {
+header_default= {
     "Content-Type": "application/json"
 }
