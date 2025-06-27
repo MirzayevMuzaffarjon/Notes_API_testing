@@ -11,9 +11,12 @@ class BaseAPI:
         self.user_login_endpoint = os.getenv("USER_LOGIN_ENDPOINT")
         self.user_delete_endpoint = os.getenv("USER_DELETE_ENDPOINT")
         self.user_profile_endpoint = os.getenv("USER_PROFILE_ENDPOINT")
+        self.user_edit_profile_endpoint = os.getenv("USER_PROFILE_ENDPOINT")
         self.name = os.getenv("NAME")
         self.email = os.getenv("EMAIL")
         self.password = os.getenv("PASSWORD")
+        self.phone = os.getenv("PHONE")
+        self.company = os.getenv("COMPANY")
 
 
     @staticmethod

@@ -8,3 +8,9 @@ body_for_user_login= {
     "email" : "mytestemailmirzayev@gmail.com",
     "password" : "password1234"
 }
+
+body_for_edit_profile = {
+    "name" : "test name",
+    "phone" : "123456789",
+    "company" : "Test Company"
+}
