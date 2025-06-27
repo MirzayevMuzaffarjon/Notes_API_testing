@@ -38,7 +38,7 @@ class BaseAPI:
             return 1
 
     @staticmethod
-    def get_default_header(token):
+    def get_default_header_with_auth(token):
         header = {
             "Content-Type": "application/json",
             "x-auth-token": token
