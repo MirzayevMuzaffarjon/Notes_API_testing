@@ -58,7 +58,8 @@ class UsersAPI(BaseAPI):
         except Exception as e:
             logging.warning(f"\n---call_user_logout_api was failed!!! Exception: {e}")
 
-    def verify_name_is_correct(self, response_body, expected_name):
+    @staticmethod
+    def verify_name_is_correct(response_body, expected_name):
         try:
             assert response_body["data"]["name"] == expected_name
             return 0
@@ -67,7 +68,8 @@ class UsersAPI(BaseAPI):
             logging.warning(f"\n---Actual({response_body['data']['name']}) name isn't matching with expected({expected_name}) name")
             return 1
 
-    def verify_email_is_correct(self, response_body, expected_email):
+    @staticmethod
+    def verify_email_is_correct(response_body, expected_email):
         try:
             assert response_body["data"]["email"] == expected_email
             return 0
@@ -76,7 +78,8 @@ class UsersAPI(BaseAPI):
             logging.warning(f"\n---Actual({response_body['data']['email']}) email isn't matching with expected({expected_email}) email")
             return 1
 
-    def verify_phone_number_is_correct(self, response_body, expected_phone_number):
+    @staticmethod
+    def verify_phone_number_is_correct(response_body, expected_phone_number):
         try:
             assert response_body["data"]["phone"] == expected_phone_number
             return 0
@@ -86,7 +89,8 @@ class UsersAPI(BaseAPI):
                 f"\n---Actual({response_body['data']['phone']}) phone isn't matching with expected({expected_phone_number}) phone")
             return 1
 
-    def verify_company_name_is_correct(self, response_body, expected_company_name):
+    @staticmethod
+    def verify_company_name_is_correct(response_body, expected_company_name):
         try:
             assert response_body["data"]["company"] == expected_company_name
             return 0
