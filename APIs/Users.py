@@ -13,7 +13,6 @@ class UsersAPI(BaseAPI):
         except Exception as e:
             logging.warning(f"\n---call_user_register_api was failed!!! Exception: {e}")
 
-
     def call_user_login_api(self, body, headers):
         url = f"{self.host}{self.user_login_endpoint}"
         try:
@@ -22,7 +21,6 @@ class UsersAPI(BaseAPI):
 
         except Exception as e:
             logging.warning(f"\n---call_user_login_api was failed!!! Exception: {e}")
-
 
     def call_user_delete_api(self, headers):
         url = f"{self.host}{self.user_delete_endpoint}"
@@ -33,7 +31,6 @@ class UsersAPI(BaseAPI):
         except Exception as e:
             logging.warning(f"\n---call_user_delete_api was failed!!! Exception: {e}")
 
-
     def call_user_profile_api(self, headers):
         url = f"{self.host}{self.user_profile_endpoint}"
         try:
@@ -42,3 +39,21 @@ class UsersAPI(BaseAPI):
 
         except Exception as e:
             logging.warning(f"\n---call_user_profile_api was failed!!! Exception: {e}")
+
+    def verify_name_is_correct(self, response_body, expected_name):
+        try:
+            assert response_body["data"]["name"] == expected_name
+            return 0
+
+        except:
+            logging.warning(f"\n---Actual({response_body["data"]["name"]}) name isn't matching with expected({expected_name}) name")
+            return 1
+
+    def verify_email_is_correct(self, response_body, expected_email):
+        try:
+            assert response_body["data"]["email"] == expected_email
+            return 0
+
+        except:
+            logging.warning(f"\n---Actual({response_body["data"]["email"]}) email isn't matching with expected({expected_email}) email")
+            return 1
