@@ -1,4 +1,4 @@
-from API_test.test_data import parameters, bodys, headers
+from API_test.test_data import bodys, headers
 
 
 def test_user_register(users_api):
