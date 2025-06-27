@@ -1,6 +1,7 @@
 import requests, os, logging
 from dotenv import load_dotenv
 
+
 class BaseAPI:
     def __init__(self):
         load_dotenv()
@@ -9,6 +10,7 @@ class BaseAPI:
         self.user_register_endpoint = os.getenv("USER_REGISTER_ENDPOINT")
         self.user_login_endpoint = os.getenv("USER_LOGIN_ENDPOINT")
         self.user_delete_endpoint = os.getenv("USER_DELETE_ENDPOINT")
+
 
     @staticmethod
     def verify_status_code_is(expected_status_code, actual_status_code):
@@ -19,6 +21,7 @@ class BaseAPI:
         except Exception as e:
             logging.warning(f"\n---verify_status_code function is filed. Expected:{expected_status_code} Actual:{actual_status_code} More: {e}")
             return 1
+
 
     def verify_health_check(self):
         url = f"{self.host}{self.health_check_endpoint}"
