@@ -49,16 +49,13 @@ class UsersAPI(BaseAPI):
         except Exception as e:
             logging.warning(f"\n---call_edit_profile_api was failed!!! Exception: {e}")
 
-
-
-
     def verify_name_is_correct(self, response_body, expected_name):
         try:
             assert response_body["data"]["name"] == expected_name
             return 0
 
         except:
-            logging.warning(f"\n---Actual({response_body["data"]["name"]}) name isn't matching with expected({expected_name}) name")
+            logging.warning(f"\n---Actual({response_body['data']['name']}) name isn't matching with expected({expected_name}) name")
             return 1
 
     def verify_email_is_correct(self, response_body, expected_email):
@@ -67,7 +64,7 @@ class UsersAPI(BaseAPI):
             return 0
 
         except:
-            logging.warning(f"\n---Actual({response_body["data"]["email"]}) email isn't matching with expected({expected_email}) email")
+            logging.warning(f"\n---Actual({response_body['data']['email']}) email isn't matching with expected({expected_email}) email")
             return 1
 
     def verify_phone_number_is_correct(self, response_body, expected_phone_number):
@@ -77,7 +74,7 @@ class UsersAPI(BaseAPI):
 
         except:
             logging.warning(
-                f"\n---Actual({response_body["data"]["phone"]}) phone isn't matching with expected({expected_phone_number}) phone")
+                f"\n---Actual({response_body['data']['phone']}) phone isn't matching with expected({expected_phone_number}) phone")
             return 1
 
     def verify_company_name_is_correct(self, response_body, expected_company_name):
@@ -87,5 +84,5 @@ class UsersAPI(BaseAPI):
 
         except:
             logging.warning(
-                f"\n---Actual({response_body["data"]["company"]}) company isn't matching with expected({expected_company_name}) company")
+                f"\n---Actual({response_body['data']['company']}) company isn't matching with expected({expected_company_name}) company")
             return 1
