@@ -13,6 +13,7 @@ class UsersAPI(BaseAPI):
         except Exception as e:
             logging.warning(f"\n---call_user_register_api was failed!!! Exception: {e}")
 
+
     def call_user_login_api(self, body, headers):
         url = f"{self.host}{self.user_login_endpoint}"
         try:
@@ -21,6 +22,7 @@ class UsersAPI(BaseAPI):
 
         except Exception as e:
             logging.warning(f"\n---call_user_login_api was failed!!! Exception: {e}")
+
 
     def call_user_delete_api(self, headers):
         url = f"{self.host}{self.user_delete_endpoint}"
