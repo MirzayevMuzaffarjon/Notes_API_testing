@@ -49,6 +49,15 @@ class UsersAPI(BaseAPI):
         except Exception as e:
             logging.warning(f"\n---call_edit_profile_api was failed!!! Exception: {e}")
 
+    def call_user_logout_api(self, headers):
+        url = f"{self.host}{self.user_logout_endpoint}"
+        try:
+            response = requests.delete(url=url, headers=headers)
+            return response
+
+        except Exception as e:
+            logging.warning(f"\n---call_user_logout_api was failed!!! Exception: {e}")
+
     def verify_name_is_correct(self, response_body, expected_name):
         try:
             assert response_body["data"]["name"] == expected_name
