@@ -18,7 +18,7 @@ def test_user_profile_get(users_api, get_token):
     test3 = users_api.verify_email_is_correct(response_body=response.json(), expected_email=users_api.email)
     if test1 + test2 + test3 != 0: raise
 
-def test_edit_profile(users_api, get_token):
+def test_user_edit_profile(users_api, get_token):
     response = users_api.call_edit_profile_api(
         body=bodys.body_for_edit_profile,
         headers=users_api.get_default_header_with_auth(get_token))
