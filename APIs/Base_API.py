@@ -10,6 +10,7 @@ class BaseAPI:
         self.user_register_endpoint = os.getenv("USER_REGISTER_ENDPOINT")
         self.user_login_endpoint = os.getenv("USER_LOGIN_ENDPOINT")
         self.user_delete_endpoint = os.getenv("USER_DELETE_ENDPOINT")
+        self.user_profile_endpoint = os.getenv("USER_PROFILE_ENDPOINT")
 
 
     @staticmethod
@@ -35,3 +36,11 @@ class BaseAPI:
         except Exception as e:
             logging.warning(f"---Health_checking_was_failed!!! Exception: {e}")
             return 1
+
+    @staticmethod
+    def get_default_header(token):
+        header = {
+            "Content-Type": "application/json",
+            "x-auth-token": token
+        }
+        return header
