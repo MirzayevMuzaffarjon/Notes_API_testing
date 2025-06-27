@@ -33,6 +33,7 @@ class UsersAPI(BaseAPI):
         except Exception as e:
             logging.warning(f"\n---call_user_delete_api was failed!!! Exception: {e}")
 
+
     def call_user_profile_api(self, headers):
         url = f"{self.host}{self.user_profile_endpoint}"
         try:
