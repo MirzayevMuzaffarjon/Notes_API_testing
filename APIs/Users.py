@@ -99,4 +99,3 @@ class UsersAPI(BaseAPI):
             logging.warning(
                 f"\n---Actual({response_body['data']['company']}) company isn't matching with expected({expected_company_name}) company")
             return 1
-

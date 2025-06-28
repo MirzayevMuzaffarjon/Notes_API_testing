@@ -30,5 +30,3 @@ def get_token(users_api):
         get_token(users_api)
         max_iteration = max_iteration - 1
     return token
-
-

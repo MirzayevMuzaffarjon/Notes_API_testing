@@ -52,4 +52,3 @@ class BaseAPI:
             "x-auth-token": token
         }
         return header
-
