@@ -1,5 +1,8 @@
 from API_test.test_data import bodys, headers
 
+def test_preparing_of_server(users_api):
+    tes1 = users_api.verify_health_check()
+    if tes1 != 0: raise
 
 def test_user_register(users_api):
     response = users_api.call_user_register_api(body=bodys.body_for_user_register, headers=headers.header_default)

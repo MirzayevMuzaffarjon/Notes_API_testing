@@ -1,11 +1,16 @@
 import pytest, logging
 from API_test.test_data import bodys, headers
 from APIs.Users import UsersAPI
+from  APIs.Notes import NotesAPI
 
 
 @pytest.fixture(scope="function")
 def users_api():
     return UsersAPI()
+
+@pytest.fixture(scope="function")
+def notes_api():
+    return NotesAPI()
 
 @pytest.fixture(scope="function")
 def get_token(users_api):

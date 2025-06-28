@@ -14,3 +14,21 @@ body_for_edit_profile = {
     "phone" : "123456789",
     "company" : "Test Company"
 }
+
+body_for_create_home_notes = {
+    "title" : "note for category home",
+    "description" : "my note for automation testing. my note category is home",
+    "category" : "Home"
+}
+
+body_for_create_work_notes = {
+    "title" : "note for category work",
+    "description" : "my note for automation testing. my note category is work",
+    "category" : "Work"
+}
+
+body_for_create_personal_notes = {
+    "title" : "note for category personal",
+    "description" : "my note for automation testing. my note category is personal",
+    "category" : "Personal"
+}
