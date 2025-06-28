@@ -4,6 +4,12 @@ body_for_user_register = {
     "password" : "password1234"
 }
 
+body_for_user_register2 = {
+    "name" : "test_namee",
+    "email" : "mytestemailmuzaffar@gmail.com",
+    "password" : "password12345"
+}
+
 body_for_user_login= {
     "email" : "mytestemailmirzayev@gmail.com",
     "password" : "password1234"
