@@ -21,3 +21,4 @@ class NotesAPI(BaseAPI):
 
         except Exception as e:
             logging.warning(f"call_create_note_api was failed: {e}")
+

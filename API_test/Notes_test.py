@@ -27,3 +27,5 @@ def test_user_delete(users_api, get_token):
     response = users_api.call_user_delete_api(headers=users_api.get_default_header_with_auth(get_token))
     test1 = users_api.verify_status_code_is(expected_status_code=200, actual_status_code=response.status_code)
     if test1 != 0: pytest.fail()
+
+
