@@ -22,6 +22,7 @@ class NotesAPI(BaseAPI):
         except Exception as e:
             logging.warning(f"call_create_note_api was failed: {e}")
 
+
     def call_get_notes_api(self, note_id, headers):
         url = f"{self.host}{self.notes_endpoint}/{note_id}"
         try:
@@ -30,6 +31,17 @@ class NotesAPI(BaseAPI):
 
         except Exception as e:
             logging.warning(f"call_get_notes_api was failed: {e}")
+
+
+    def call_get_notes_list_api(self, headers):
+        url = f"{self.host}{self.notes_endpoint}"
+        try:
+            response = requests.get(url=url, headers=headers)
+            return response
+
+        except Exception as e:
+            logging.warning(f"call_get_notes_list_api was failed: {e}")
+
 
     @staticmethod
     def verify_note_title(expected_title, response_body):
@@ -40,6 +52,7 @@ class NotesAPI(BaseAPI):
         except:
             logging.warning(f"\n---Actual({response_body["data"]["title"]}) title is not matching with expected({expected_title}) title")
             return 1
+
 
     @staticmethod
     def verify_note_description(expected_description, response_body):

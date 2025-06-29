@@ -54,6 +54,7 @@ class BaseAPI:
             logging.warning(f"---Health_checking_was_failed!!! Exception: {e}")
             return 1
 
+
     @staticmethod
     def get_default_header_with_auth(token):
         header = {
