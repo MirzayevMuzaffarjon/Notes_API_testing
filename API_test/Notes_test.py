@@ -55,13 +55,13 @@ def test_get_personal_note(notes_api, get_token):
     test4 = notes_api.verify_note_category(expected_category=notes_api.personal_note_category, response_body=response.json())
     if test1 + test2 + test3 + test4 != 0: pytest.fail()
 
-def test_delete_home_note(notes_api, get_token):
-    response = notes_api.call_delete_notes_api(note_id=home_note_id, headers=notes_api.get_default_header_with_auth(get_token))
+def test_get_list_of_notes(notes_api, get_token):
+    response = notes_api.call_get_notes_list_api(notes_api.get_default_header_with_auth(get_token))
     test1 = notes_api.verify_status_code_is(expected_status_code=200, actual_status_code=response.status_code)
     if test1 != 0: pytest.fail()
 
-def test_get_list_of_notes(notes_api, get_token):
-    response = notes_api.call_get_notes_list_api(notes_api.get_default_header_with_auth(get_token))
+def test_delete_home_note(notes_api, get_token):
+    response = notes_api.call_delete_notes_api(note_id=home_note_id, headers=notes_api.get_default_header_with_auth(get_token))
     test1 = notes_api.verify_status_code_is(expected_status_code=200, actual_status_code=response.status_code)
     if test1 != 0: pytest.fail()
 
