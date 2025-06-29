@@ -30,3 +30,34 @@ class NotesAPI(BaseAPI):
 
         except Exception as e:
             logging.warning(f"call_get_notes_api was failed: {e}")
+
+    @staticmethod
+    def verify_note_title(expected_title, response_body):
+        try:
+            assert expected_title == response_body["data"]["title"]
+            return 0
+
+        except:
+            logging.warning(f"\n---Actual({response_body["data"]["title"]}) title is not matching with expected({expected_title}) title")
+            return 1
+
+    @staticmethod
+    def verify_note_description(expected_description, response_body):
+        try:
+            assert expected_description == response_body["data"]["description"]
+            return 0
+
+        except:
+            logging.warning(f"\n---Actual({response_body["data"]["description"]}) description is not matching with expected({expected_description}) description")
+            return 1
+
+
+    @staticmethod
+    def verify_note_category(expected_category, response_body):
+        try:
+            assert expected_category == response_body["data"]["category"]
+            return 0
+
+        except:
+            logging.warning(f"\n---Actual({response_body["data"]["category"]}) category is not matching with expected({expected_category}) category")
+            return 1

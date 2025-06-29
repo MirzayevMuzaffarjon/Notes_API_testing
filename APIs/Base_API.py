@@ -19,6 +19,15 @@ class BaseAPI:
         self.password = os.getenv("PASSWORD")
         self.phone = os.getenv("PHONE")
         self.company = os.getenv("COMPANY")
+        self.home_note_title = os.getenv("HOME_NOTE_TITLE")
+        self.home_note_description = os.getenv("HOME_NOTE_DESCRIPTION")
+        self.home_note_category = os.getenv("HOME_NOTE_CATEGORY")
+        self.work_note_title = os.getenv("WORK_NOTE_TITLE")
+        self.work_note_description = os.getenv("WORK_NOTE_DESCRIPTION")
+        self.work_note_category = os.getenv("WORK_NOTE_CATEGORY")
+        self.personal_note_title = os.getenv("PERSONAL_NOTE_TITLE")
+        self.personal_note_description = os.getenv("PERSONAL_NOTE_DESCRIPTION")
+        self.personal_note_category = os.getenv("PERSONAL_NOTE_CATEGORY")
 
 
     @staticmethod
