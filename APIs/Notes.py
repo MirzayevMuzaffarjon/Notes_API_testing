@@ -74,3 +74,13 @@ class NotesAPI(BaseAPI):
         except:
             logging.warning(f"\n---Actual({response_body["data"]["category"]}) category is not matching with expected({expected_category}) category")
             return 1
+
+    @staticmethod
+    def verify_status_massage(response_body):
+        try:
+            assert response_body["message"] == "Note successfully created"
+            return 0
+
+        except:
+            logging.warning(f"\n---verify_note_successfully_created function was failed")
+            return 1
