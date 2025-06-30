@@ -1,5 +1,5 @@
 import pytest
-from API_test.test_data import bodys, headers
+from API_test.test_data import bodys
 
 
 def test_preparing_of_server(users_api):
