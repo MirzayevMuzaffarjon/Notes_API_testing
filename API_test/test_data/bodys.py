@@ -15,6 +15,11 @@ body_for_user_login= {
     "password" : "password1234"
 }
 
+body_for_user_login_with_incorrect_data= {
+    "email" : "mytestemailervefrverfgdsdmirzayev@gmail.com",
+    "password" : "passerferferword1234"
+}
+
 body_for_edit_profile = {
     "name" : "test name",
     "phone" : "123456789",

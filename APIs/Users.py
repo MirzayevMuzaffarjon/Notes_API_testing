@@ -108,3 +108,25 @@ class UsersAPI(BaseAPI):
             logging.warning(
                 f"\n---Actual({response_body['data']['company']}) company isn't matching with expected({expected_company_name}) company")
             return 1
+
+
+    @staticmethod
+    def verify_status_massage_for_exists_user(response_body):
+        try:
+            assert response_body["message"] == "An account already exists with the same email address"
+            return 0
+
+        except:
+            logging.warning(f"\n---verify_status_massage_for_exists_user was failed")
+            return 1
+
+
+    @staticmethod
+    def verify_status_massage_for_login_incorrect_data(response_body):
+        try:
+            assert response_body["message"] == "Incorrect email address or password"
+            return 0
+
+        except:
+            logging.warning(f"\n---verify_status_massage_for_login_incorrect_data was failed")
+            return 1
